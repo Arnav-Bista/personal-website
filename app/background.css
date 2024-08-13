@@ -1,0 +1,79 @@
+@import "./globals.css";
+
+.layers {
+  z-index: -1;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+
+.layers > div {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  opacity: 50%;
+}
+
+.layers .highlight {
+  background: radial-gradient(circle at center,
+      var(--highlight-color),
+      transparent 40%);
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+  animation: move-color 20s ease infinite;
+  mix-blend-mode: saturation;
+}
+
+.layers .complement {
+  background: radial-gradient(circle at center,
+      var(--highlight-complement),
+      transparent 40%);
+  background-size: 70% 70%;
+  background-repeat: no-repeat;
+  animation: move-color-m 17s ease infinite;
+  mix-blend-mode: saturation;
+}
+
+.layers .third {
+  background: radial-gradient(circle at center,
+      var(--third-color),
+      transparent 40%);
+  background-size: 70% 70%;
+  background-repeat: no-repeat;
+  animation: move-color-opp 25s ease infinite;
+  mix-blend-mode: exclusion;
+}
+
+@keyframes move-color {
+  0%, 100% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes move-color-m {
+  0%, 100% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0 100%;
+  }
+}
+
+
+@keyframes move-color-opp {
+  0%, 100% {
+    background-position: 50% 100%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 50% 0;
+  }
+  75% {
+    background-position: 0 50%;
+  }
+}
