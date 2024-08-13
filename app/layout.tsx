@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const titles = ["Home", "Education", "Projects", "Contact Me"];
-  const urls = ["/", "/education", "/projects",  "/contact"];
+  const titles = ["Home", "Education", "Projects", "Contact Me", "CV"];
+  const urls = ["/", "/education", "/projects",  "/contact", "/cv"];
 
   return (
     <html lang="en">

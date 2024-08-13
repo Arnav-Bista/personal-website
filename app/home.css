@@ -1,0 +1,4 @@
+.myself {
+  background-color: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(70px);
+}
