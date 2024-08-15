@@ -17,17 +17,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const titles = ["Home", "Education", "Projects", "Contact Me", "CV"];
-  const urls = ["/", "/education", "/projects",  "/contact", "/cv"];
+  const titles = ["Home", "Experience", "Education", "Projects", "Contact Me", "CV"];
+  const urls = ["/", "/experience", "/education", "/projects", "/contact", "/cv"];
 
   return (
     <html lang="en">
       <body className={`${firaCode.className}`}>
-      <div className="layers">
-        <div className="complement"/>
-        <div className="highlight"/>
-        <div className="third"/>
-      </div>
+        <div className="layers">
+          <div className="complement" />
+          <div className="highlight" />
+          <div className="third" />
+        </div>
         <NavBar titles={titles} urls={urls} />
         {children}
       </body>
