@@ -19,7 +19,7 @@ export default function Home() {
           <div className="w-[70%] flex flex-col ">
             <h1>About Me</h1>
             <p className="my-4">
-              Hi! I'm a 3rd year Computer Science student at the University of St Andrews. <br />
+              I'm a 3rd year Computer Science student at the University of St Andrews. <br />
               I've got a passion for problem solving and am always on the lookout for new challenges. <br />
             </p>
             <p>
@@ -27,7 +27,7 @@ export default function Home() {
               I'm a full stack developer, able to create and setup servers, web apps, mobile apps and anything in between. If I can't yet, I'm up for the challenge.
             </p>
             <p className="my-4">
-              I'm always on the lookout for opportunities. If you have a problem that needs solving, or a project that needs a developer, just shoot me a message!
+              I'm always on the lookout for opportunities. If you have a problem that needs solving, or a project that needs a developer, let's talk.
             </p>
             <div className="mt-auto">
               <Link href="/contact" className="link">GET IN TOUCH</Link>

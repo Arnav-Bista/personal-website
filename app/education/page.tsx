@@ -14,10 +14,16 @@ export default function Education() {
           <div className="w-[70%] flex flex-col">
             <h1>Undergraduate</h1>
             <SectionDetails
+              title="2025/26"
+              entry={[
+                "Coming Soon..."
+              ]}
+            />
+            <SectionDetails
               title="2024/25"
               entry={[
                 "CS3050 - Logic and Reasoning",
-                "CS3052 - Comutational Complexity",
+                "CS3052 - Computational Complexity",
                 "CS3099 - Software Engineering Team Project",
                 "CS3101 - Databases",
                 "CS3102 - Data Communications and Networks",
@@ -45,21 +51,24 @@ export default function Education() {
                 "MT1002 - Pure and Applied Mathematics",
               ]}
             />
-
           </div>
           <Image
             src={standrews}
             alt="Picture of Me"
             quality={100}
             placeholder="blur"
-            className="w-[30%] rounded-md"
+            className="rounded-md"
+            style={{
+              height: "100%",
+              width: '30%'
+            }}
           />
         </div>
       </Card>
       <Card backdrop className="mt-10">
         <div className="m-10 p-8 flex flex-row">
           <div className="w-[70%] flex flex-col">
-              <h1>International Baccalaureate</h1>
+            <h1>International Baccalaureate</h1>
             <SectionDetails
               title="42/45"
               entry={[
