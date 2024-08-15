@@ -17,7 +17,7 @@
   right: 0;
 }
 
-.navbar a {
+.link {
     color: #040f16;
     display: inline-block;
     position: relative;
@@ -27,21 +27,21 @@
     transition: 0.2s ease-in-out;
 }
 
-.navbar a:hover {
+.link:hover {
     color: var(--highlight-color);
     transition: 0.2s ease-in-out;
 }
 
-.navbar a.selected {
+.link.selected {
     color: var(--highlight-color);
 }
 
-.navbar a:hover:after {
+.link:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-.navbar a:after {
+.link:after {
     content: '';
     position: absolute;
     width: 100%;

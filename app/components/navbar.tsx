@@ -35,7 +35,7 @@ export default function NavBar(props: NavBarProps) {
             <div className='flex-[1] flex flex-row justify-evenly items-center w-[60%]'>
               {
                 ...props.titles.map((title, index) => {
-                  const className = `mx-8 text-nowrap ${currentPage === props.urls[index] ? 'selected' : ''}`
+                  const className = `link mx-8 text-nowrap ${currentPage === props.urls[index] ? 'selected' : ''}`
                   return <Link
                     key={index}
                     href={props.urls[index]}
