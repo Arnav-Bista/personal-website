@@ -6,7 +6,6 @@ interface SectionDetailsProps {
 }
 
 export default function SectionDetails(props: SectionDetailsProps) {
-  console.log(props.score);
   return (
     <div>
       <h2>{props.title}</h2>
