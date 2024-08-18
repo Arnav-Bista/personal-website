@@ -54,7 +54,6 @@ function constructUlRecursive(data: Array<string>, oldIndicator: string, newIndi
 
   let i = index;
   while (i < data.length) {
-    console.log("Processing", data[i]);
     const point = data[i];
     // If we're at the end of this scope
     if (!point.startsWith(oldIndicator) && !point.startsWith(newIndicator)) {
