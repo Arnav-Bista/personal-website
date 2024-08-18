@@ -1,4 +1,6 @@
 import Card from "../components/card";
+import SectionDetails from "../components/sectionDetails";
+import SectionPoints from "../components/sectionPoints";
 import ExperienceTechs from "./experienceTechs";
 import Section from "./section";
 
@@ -12,12 +14,25 @@ export default function Experience() {
         type="Hybrid"
         location="Gurugram, India"
       >
+        <SectionPoints
+          className="mb-8"
+          points={[
+            "Integrated LLMs into existing tech stacks to improve user experience by providing AI Powered features", 
+            "First",
+            "\tSecond One",
+            "\tSecond Two",
+            "\t\tThird",
+            "First",
+            "\tSecond"
+
+          ]}
+        />
         <ExperienceTechs
           techs={[
             "go",
             "python",
             "javascript",
-            "typescript",
+            // "typescript",
             "postgres",
             "mysql"
           ]}
