@@ -19,7 +19,7 @@ export default function Section(props: SectionProps) {
           <h3 className="opacity-80">{props.duration}</h3>
         </div>
         <h2>{props.position}</h2>
-        <span className="flex flex-row opacity-70 mb-8">
+        <span className="flex flex-row opacity-70 mb-4">
           <h4>{`${props.type} - ${props.location}`}</h4>
         </span>
         {props.children}

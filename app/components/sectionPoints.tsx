@@ -7,7 +7,7 @@ interface SectionPointsProps {
 
 export default function SectionPoints(props: SectionPointsProps) {
   return (
-    <div className={`flex flex-col ${props.className}`}>
+    <div className={`flex flex-col mb-4 ${props.className}`}>
       {constructUl(props.points, "\t")}
     </div >
   );

@@ -10,7 +10,7 @@ import Techs from "./techs";
 export default function Home() {
   return (
     <>
-      <div className="intro h-[80vh] w-full felx align-middle justify-center items-center place-content-center text-center">
+      <div className="intro h-[80vh] w-full align-middle justify-center items-center place-content-center text-center">
         <h1>Hi, I'm Arnav</h1>
         <h2>Aspiring Software Engineer & Full Stack Developer</h2>
       </div>

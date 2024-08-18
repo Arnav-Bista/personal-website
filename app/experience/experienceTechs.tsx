@@ -44,8 +44,11 @@ export default function ExperienceTechs(props: TechsProps) {
   }
 
   return (
-    <div className="flex flex-row">
+    <div>
+      <h4 className="opacity-60">Key Technologies Used:</h4>
+    <div className="flex flex-row mt-4">
       {...imagesArray}
+    </div>
     </div>
   );
 }
