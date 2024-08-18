@@ -3,7 +3,7 @@ import Card from "../components/card";
 
 import standrews from "@/public/images/standrews.png"
 import tbs from "@/public/images/tbs.png"
-import SectionDetails from "./sectionDetails";
+import SectionDetails from "../components/sectionDetails";
 
 export default function Education() {
 
