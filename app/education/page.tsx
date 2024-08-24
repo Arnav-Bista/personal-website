@@ -25,10 +25,11 @@ export default function Education() {
                 "CS3050 - Logic and Reasoning",
                 "CS3052 - Computational Complexity",
                 "CS3099 - Software Engineering Team Project",
-                "CS3101 - Databases",
+                // "CS3101 - Databases",
                 "CS3102 - Data Communications and Networks",
                 "CS3104 - Operating Systems",
-                "CS3302 - Data Encoding"
+                "CS3302 - Data Encoding",
+                "VIP    - AI for Decision Making"
               ]}
             />
             <SectionDetails

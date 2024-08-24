@@ -1,0 +1,23 @@
+name: Personal Website CI/CD
+
+on: [push]
+jobs: 
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy 
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          ssh-agent: yes
+          script: |
+            cd ~/Projects/personal-website
+            eval (ssh-agent -c)
+            ssh-add ~/.ssh/personal_server
+            git pull
+            nvm use 
+            pnpm build
+            sudo systemctl restart personalwebsite.service
