@@ -8,7 +8,7 @@
   /* --background-color: #f3f3f4; */
   --highlight-color: #b8336a;
   --highlight-complement: #33B881;
-  --third-color: #2E4057 ;
+  --third-color: #2E4057;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
@@ -20,6 +20,10 @@
 /*     --background-end-rgb: 0, 0, 0; */
 /*   } */
 /* } */
+
+html {
+  font-size: 2vmin;
+}
 
 h1 {
   font-size: 2rem;

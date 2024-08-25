@@ -60,8 +60,9 @@ export default function NavBar(props: NavBarProps) {
       <div className='filler w-full'>
         <div className='navbar w-[80%] mx-auto flex items-center'>
           <div className='flex h-10 w-full'>
-            <div className='flex-[4] text-3xl'>
-              Arnav Bista
+            <div className='flex-[4] text-3xl text-nowrap'>
+              <div className='long-name'>Arnav Bista</div>
+              <div className='short-name'>AB</div>
             </div>
             <div className='navbar-links'>
               {links}
