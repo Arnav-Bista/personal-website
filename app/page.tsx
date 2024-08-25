@@ -5,6 +5,7 @@ import Card from "./components/card";
 import myself from "@/public/images/myself.jpeg"
 import Link from "next/link";
 import Techs from "./techs";
+import "./home.css"
 
 
 export default function Home() {
@@ -15,8 +16,8 @@ export default function Home() {
         <h2>Aspiring Software Engineer & Full Stack Developer</h2>
       </div>
       <Card backdrop>
-        <div className="m-10 p-8 flex felx-row">
-          <div className="w-[70%] flex flex-col ">
+        <div className="m-10 p-8 flex felx-row gap-4">
+          <div className="flex flex-col">
             <h1>About Me</h1>
             <p className="my-4">
               I'm a 3rd year Computer Science student at the University of St Andrews. <br />
@@ -38,7 +39,7 @@ export default function Home() {
             alt="Picture of Me"
             quality={100}
             placeholder="blur"
-            className="w-[30%] rounded-md"
+            className="rounded-md aboutmeimg"
           />
         </div>
       </Card>

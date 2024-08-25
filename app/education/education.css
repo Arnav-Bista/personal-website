@@ -1,0 +1,9 @@
+.edu-logo {
+  margin-left: auto;
+}
+
+@media (max-width: 930px) {
+  .edu-logo {
+    display: none;
+  }
+}

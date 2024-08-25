@@ -1,0 +1,10 @@
+.aboutmeimg {
+  width: 25vw;
+  object-fit: cover;
+}
+
+@media (max-width: 930px) {
+  .aboutmeimg {
+    display: none;
+  }
+}
