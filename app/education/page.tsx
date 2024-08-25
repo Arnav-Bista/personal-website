@@ -12,7 +12,7 @@ export default function Education() {
     <>
       <Card backdrop className="mt-10">
         <div className="m-10 p-8 flex flex-row">
-          <div className="w-[70%] flex flex-col">
+          <div className="flex flex-col">
             <h1>Undergraduate</h1>
             <SectionDetails
               title="2025/26"
@@ -54,22 +54,20 @@ export default function Education() {
               ]}
             />
           </div>
-          <Image
-            src={standrews}
-            alt="Picture of Me"
-            quality={100}
-            placeholder="blur"
-            className="rounded-md"
-            style={{
-              height: "100%",
-              width: '30%'
-            }}
-          />
+          <div className="w-1/3 edu-logo">
+            <Image
+              src={standrews}
+              alt="Picture of Me"
+              quality={100}
+              placeholder="blur"
+              className="rounded-md"
+            />
+          </div>
         </div>
       </Card>
       <Card backdrop className="mt-10">
         <div className="m-10 p-8 flex flex-row">
-          <div className="w-[70%] flex flex-col">
+          <div className="flex flex-col">
             <h1>International Baccalaureate</h1>
             <SectionDetails
               title="42/45"
@@ -93,13 +91,16 @@ export default function Education() {
               ]}
             />
           </div>
-          <Image
-            src={tbs}
-            alt="Picture of Me"
-            quality={100}
-            placeholder="blur"
-            className="w-[30%] rounded-md"
-          />
+          <div className="w-1/3 edu-logo">
+            <Image
+              src={tbs}
+              alt="The British School, New Delhi Logo"
+              quality={100}
+              placeholder="blur"
+              objectFit="contain"
+              className="rounded-md edu-logo"
+            />
+          </div>
         </div>
       </Card>
     </>

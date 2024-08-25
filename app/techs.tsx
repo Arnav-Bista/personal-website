@@ -50,27 +50,22 @@ interface TechsGridProps {
 
 function TechsGrid(props: TechsGridProps) {
   const data = IconNameFileWalkSync();
-  const size = 100;
-
   const imagesArray: Array<ReactNode> = [];
 
   for (let i = 0; i < data.length; i++) {
     // Remove .svg extension
     const iconPath = data[i]
     const iconName = iconPath.slice(0, -4);
-    const marginX = size * ((i) % 2)
     imagesArray.push(
-      <div className="h-[100px] w-[100px] relative" key={i} style={{ margin: `0 ${marginX}px` }}>
+      <div className="h-24 w-24 relative" key={i}>
         <Image
           key={i}
           src={`/logos/${iconPath}`}
           alt={`Logo of ${iconName}`}
           quality={100}
-          height={size}
-          width={size}
+          fill={true}
+          objectFit="contain"
           style={{
-            objectFit: "contain",
-            height: `${size}px`,
             borderRadius: "10px",
           }}
         />
@@ -79,7 +74,7 @@ function TechsGrid(props: TechsGridProps) {
   }
 
   return (
-    <div className="flex flex-row flex-wrap pt-8 gap-y-4 justify-center">
+    <div className="flex flex-row flex-wrap pt-8 gap-6 justify-center">
       {imagesArray}
     </div>
   );

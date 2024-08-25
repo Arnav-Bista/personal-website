@@ -15,7 +15,7 @@ export default function ExperienceTechs(props: TechsProps) {
   for (let i = 0; i < props.techs.length; i++) {
     let iconPathName = props.techs[i] + ".svg"
     const marginX = size * ((i) % 2);
-  
+
 
     if (existsSync(`./public/logos/${iconPathName}`)) {
       iconPathName = `/logos/${iconPathName}`;
@@ -25,7 +25,7 @@ export default function ExperienceTechs(props: TechsProps) {
     }
 
     imagesArray.push(
-      <div className="h-[100px] w-[100px] relative" key={i} style={{ margin: `0 ${marginX}px` }}>
+      <div className="h-24 w-24 relative" key={i}>
         <Image
           key={i}
           src={iconPathName}
@@ -46,9 +46,9 @@ export default function ExperienceTechs(props: TechsProps) {
   return (
     <div>
       <h4 className="opacity-60">Key Technologies Used:</h4>
-    <div className="flex flex-row mt-4">
-      {...imagesArray}
-    </div>
+      <div className="flex flex-row mt-4 flex-wrap justify-evenly gap-4">
+        {...imagesArray}
+      </div>
     </div>
   );
 }
