@@ -3,8 +3,8 @@
 .layers {
   z-index: -1;
   position: fixed;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 .layers > div {
@@ -17,8 +17,8 @@
 .layers .highlight {
   background: radial-gradient(circle at center,
       var(--highlight-color),
-      transparent 40%);
-  background-size: 75% 75%;
+      transparent 50%);
+  background-size: 70rem 70rem;
   background-repeat: no-repeat;
   animation: move-color 20s ease infinite;
   mix-blend-mode: saturation;
@@ -27,8 +27,8 @@
 .layers .complement {
   background: radial-gradient(circle at center,
       var(--highlight-complement),
-      transparent 40%);
-  background-size: 70% 70%;
+      transparent 50%);
+  background-size: 60rem 60rem;
   background-repeat: no-repeat;
   animation: move-color-m 17s ease infinite;
   mix-blend-mode: saturation;
@@ -37,8 +37,8 @@
 .layers .third {
   background: radial-gradient(circle at center,
       var(--third-color),
-      transparent 40%);
-  background-size: 70% 70%;
+      transparent 50%);
+  background-size: 70rem 70rem;
   background-repeat: no-repeat;
   animation: move-color-opp 25s ease infinite;
   mix-blend-mode: exclusion;
