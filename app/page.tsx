@@ -7,11 +7,10 @@ import Link from "next/link";
 import Techs from "./techs";
 import "./home.css"
 
-
 export default function Home() {
   return (
     <>
-      <div className="intro h-[80vh] w-full align-middle justify-center items-center place-content-center text-center">
+      <div className="intro h-[60vh] w-full align-middle justify-center items-center place-content-center text-center">
         <h1>Hi, I'm Arnav</h1>
         <h2>Aspiring Software Engineer & Full Stack Developer</h2>
       </div>
