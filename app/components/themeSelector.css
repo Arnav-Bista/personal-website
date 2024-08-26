@@ -1,0 +1,9 @@
+.theme-button {
+  height: 2rem;
+  width: 2rem;
+  margin: auto;
+}
+
+#theme-button[data-theme="dark"] {
+  filter: invert(1);
+}

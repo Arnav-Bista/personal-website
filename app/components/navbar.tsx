@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 
 import "./navbar.css";
 import Link from 'next/link';
+import ThemeSelector from './themeSelector';
 
 
 interface NavBarProps {
@@ -24,8 +25,6 @@ export default function NavBar(props: NavBarProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    console.log("ADDED");
-
     const handleClickOutside = (e: MouseEvent) => {
       console.log(e.target);
       if (e.target !== document.querySelector('.hamburger-icon')) {
@@ -35,9 +34,7 @@ export default function NavBar(props: NavBarProps) {
         setOpen(!open);
       }
     };
-
     document.addEventListener('click', handleClickOutside);
-
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
@@ -74,6 +71,7 @@ export default function NavBar(props: NavBarProps) {
               {links}
             </div>
           </div>
+          <ThemeSelector />
         </div>
       </div>
       <div className='h-8' />
