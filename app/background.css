@@ -21,7 +21,7 @@
   background-size: 70rem 70rem;
   background-repeat: no-repeat;
   animation: move-color 20s ease infinite;
-  mix-blend-mode: saturation;
+  mix-blend-mode: color;
 }
 
 .layers .complement {
@@ -41,7 +41,7 @@
   background-size: 70rem 70rem;
   background-repeat: no-repeat;
   animation: move-color-opp 25s ease infinite;
-  mix-blend-mode: exclusion;
+  mix-blend-mode: hue;
 }
 
 @keyframes move-color {
