@@ -15,29 +15,24 @@ enum Theme {
 
 export default function ThemeSelector() {
 
-  const storedTheme = (localStorage.getItem("theme") ?? Theme.System).toString() as Theme;
-  const [theme, setTheme] = useState(storedTheme);
+  // const storedTheme = (localStorage.getItem("theme") ?? Theme.System).toString() as Theme;
+  const storedTheme = useRef(Theme.System);
+  const [theme, setTheme] = useState(storedTheme.current);
 
   useEffect(() => {
-    switch (storedTheme) {
-      case Theme.Dark:
-        setAttribute(Theme.Dark);
-        break;
-      case Theme.Light:
-        setAttribute(Theme.Light);
-        break;
-      case Theme.System:
-      default:
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          document.documentElement.setAttribute("data-theme", Theme.Dark);
-          setAttribute(Theme.Dark);
-        }
-        else {
-          setAttribute(Theme.Light);
-        }
-        break;
+    storedTheme.current = (localStorage.getItem("theme") ?? Theme.System).toString() as Theme;
+    let theme = storedTheme.current;
+    if (storedTheme.current === Theme.System) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        theme = Theme.Dark;
+      }
+      else {
+        theme = Theme.Light;
+      }
     }
-  });
+    setAttribute(theme);
+    setTheme(storedTheme.current);
+  }, []);
 
   function handleThemeChange(oldTheme: Theme) {
     // Cycle from Light -> Dark -> System -> Light....
@@ -53,16 +48,18 @@ export default function ThemeSelector() {
         newTheme = Theme.Light;
     }
     setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
     if (newTheme === Theme.System) {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         setAttribute(Theme.Dark);
       }
-      setAttribute(Theme.Light);
+      else {
+        setAttribute(Theme.Light);
+      }
     }
     else {
       setAttribute(newTheme);
     }
-    localStorage.setItem("theme", newTheme);
   }
 
   return (
