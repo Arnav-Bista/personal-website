@@ -38,7 +38,7 @@ export default function SectionPoints(props: SectionPointsProps) {
 function constructUl(data: Array<string>, indicator: string): ReactNode {
   const [result, _] = constructUlRecursive(data, "", indicator, 0);
   return (
-    <ul className="list-disc list-inside marker:text-black/60 [&_ul]:list-[revert]">
+    <ul className="list-disc list-inside [&_ul]:list-[revert]">
       {...result}
     </ul>
   );
