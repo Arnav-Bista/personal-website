@@ -64,8 +64,8 @@ function TechsGrid(props: TechsGridProps) {
           alt={`Logo of ${iconName}`}
           quality={100}
           fill={true}
-          objectFit="contain"
           style={{
+            objectFit: "contain",
             borderRadius: "10px",
           }}
         />

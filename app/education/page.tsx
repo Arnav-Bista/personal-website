@@ -97,8 +97,10 @@ export default function Education() {
               alt="The British School, New Delhi Logo"
               quality={100}
               placeholder="blur"
-              objectFit="contain"
               className="rounded-md edu-logo"
+              style={{
+                objectFit: "contain"
+              }}
             />
           </div>
         </div>
