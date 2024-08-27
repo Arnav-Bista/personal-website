@@ -35,7 +35,6 @@ export default function ExperienceTechs(props: TechsProps) {
           width={size}
           style={{
             objectFit: "contain",
-            height: `${size}px`,
             borderRadius: "10px",
           }}
         />
