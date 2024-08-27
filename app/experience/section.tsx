@@ -16,7 +16,7 @@ export default function Section(props: SectionProps) {
       <div className="m-10 p-8 flex flex-col">
         <div className="flex flex-row justify-between items-center">
           <h1>{props.title}</h1>
-          <h3 className="opacity-80">{props.duration}</h3>
+          <h4 className="opacity-80">{props.duration}</h4>
         </div>
         <h2>{props.position}</h2>
         <span className="flex flex-row opacity-70 mb-4">
