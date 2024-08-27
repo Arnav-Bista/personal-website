@@ -13,7 +13,11 @@ enum Theme {
   System = "system"
 }
 
-export default function ThemeSelector() {
+interface ThemeSelectorProps {
+  className?: string
+}
+
+export default function ThemeSelector(props: ThemeSelectorProps) {
 
   // const storedTheme = (localStorage.getItem("theme") ?? Theme.System).toString() as Theme;
   const storedTheme = useRef(Theme.System);
@@ -63,8 +67,8 @@ export default function ThemeSelector() {
   }
 
   return (
-    <button id="theme-button" onClick={() => handleThemeChange(theme)} className="theme-button">
-      <Image src={getThemeIcon(theme)} alt="Theme Icon" objectFit="contain" />
+    <button id="theme-button" onClick={() => handleThemeChange(theme)} className={`theme-button ${props.className}`}>
+      <Image src={getThemeIcon(theme)} alt="Theme Icon" style={{ objectFit: "contain" }} />
     </button>
   );
 }

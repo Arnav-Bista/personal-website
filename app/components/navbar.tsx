@@ -42,7 +42,7 @@ export default function NavBar(props: NavBarProps) {
 
 
   const links = props.titles.map((title, index) => {
-    const className = `link mx-8 text-nowrap ${currentPage === props.urls[index] ? 'selected' : ''}`
+    const className = `link text-nowrap ${currentPage === props.urls[index] ? 'selected' : ''}`
     return <Link
       key={index}
       href={props.urls[index]}
@@ -55,23 +55,22 @@ export default function NavBar(props: NavBarProps) {
   return (
     <>
       <div className='filler w-full'>
-        <div className='navbar w-[80%] mx-auto flex items-center'>
-          <div className='flex h-10 w-full'>
-            <div className='flex-[4] text-3xl text-nowrap'>
-              <div className='long-name'>Arnav Bista</div>
-              <div className='short-name'>AB</div>
-            </div>
-            <div className='navbar-links'>
-              {links}
+        <div className='navbar w-[80%] mx-auto flex items-center justify-between'>
+          <h1 className='long-name w-1/3 text-nowrap'>Arnav Bista</h1>
+          <h1 className='short-name w-1/3 text-nowrap'>AB</h1>
+          <div className='navbar-links'>
+            {links}
+          </div>
+          <div className='flex flex-row w-1/6'>
+            <ThemeSelector />
+            <div className={`hamburger ${open ? "open" : ""}`}>
+              <h1 className={`hamburger-icon text-center`}>&#9776;</h1>
+              <div className={`hamburger-dropdown ${open ? '' : 'hidden'}`}>
+                {links}
+              </div>
             </div>
           </div>
-          <div className={`hamburger ${open ? "open" : ""}`}>
-            <h1 className={`hamburger-icon text-center`}>&#9776;</h1>
-            <div className={`hamburger-dropdown ${open ? '' : 'hidden'}`}>
-              {links}
-            </div>
-          </div>
-          <ThemeSelector />
+
         </div>
       </div>
       <div className='h-8' />
