@@ -1,7 +1,7 @@
 // import { readdir, readdirSync } from "fs";
 import { readdir } from "fs/promises"
 import Image from "next/image";
-import Card from "./components/card";
+import Card from "../components/card";
 import { ReactNode } from "react";
 import { readdirSync } from "fs";
 import Link from "next/link";

@@ -28,7 +28,7 @@
 }
 
 .link {
-    /* color: #040f16; */
+    color: var(--link-color);
     display: inline-block;
     position: relative;
     text-decoration: none;

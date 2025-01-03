@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Card from "../components/card";
+import Card from "../../components/card";
 
 import standrews from "@/public/images/standrews.png"
 import tbs from "@/public/images/tbs.png"
-import SectionDetails from "../components/sectionDetails";
+import SectionDetails from "../../components/sectionDetails";
 import "./education.css";
 
 export default function Education() {

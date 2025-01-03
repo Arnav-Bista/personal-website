@@ -13,7 +13,6 @@ interface NavBarProps {
   urls: Array<string>
 }
 
-// Will need to readjust height if the navbar changes...
 export default function NavBar(props: NavBarProps) {
 
   assert(

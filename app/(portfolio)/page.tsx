@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import Image from "next/image";
-import Card from "./components/card";
+import Card from "../components/card";
 import myself from "@/public/images/myself.jpeg"
 import Link from "next/link";
 import Techs from "./techs";

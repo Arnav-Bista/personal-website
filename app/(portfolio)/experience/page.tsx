@@ -1,6 +1,6 @@
-import Card from "../components/card";
-import SectionDetails from "../components/sectionDetails";
-import SectionPoints from "../components/sectionPoints";
+import Card from "../../components/card";
+import SectionDetails from "../../components/sectionDetails";
+import SectionPoints from "../../components/sectionPoints";
 import ExperienceTechs from "./experienceTechs";
 import Section from "./section";
 
@@ -9,10 +9,10 @@ export default function Experience() {
     <>
       <Section
         title="Ixigo"
-        position="Software Developer Intern"
-        duration="Aug 2024 - Sept 2024 (2 mos)"
+        position="Software Developer Intern | Part-Time"
+        duration="Aug 2024 - Sept 2024 (2 mos) | Oct 2024 - Dec 2024 (3 mos)"
         type="Hybrid"
-        location="Gurugram, India"
+        location="Gurugram, India | Remote"
       >
         <SectionPoints
           points={[
