@@ -68,30 +68,41 @@ export default function Page() {
     ]);
   }
 
-  function initGa() {
+  function resetGa() {
     if (gaRef.current) {
       gaRef.current.free();
       gaRef.current = undefined;
     }
+    setGeneration(0);
   }
 
 
   return (
     <>
       <ConstraintsHeader
+        onResetPath={() => {
+          setGeneration(0);
+          setPath([[], []]);
+          resetGa();
+        }}
         onClear={() => {
           setGeneration(0);
           setPoints([]);
+          setPath([[], []]);
         }}
         onGenerate={(n) => {
           if (dimensions.current[0] != 0 || dimensions.current[1] != 0) {
             setPoints(generatePoints(n, dimensions.current));
-            setGeneration(0);
-            initGa();
+            resetGa();
           }
         }}
         parameters={parameters}
-        onChange={(p) => setParameters({ ...p })}
+        onChange={(p) => {
+          setParameters({ ...p });
+          if (p.population_count != parameters.population_count) {
+            resetGa();
+          }
+        }}
       />
       <SimulationControls
         onStep={iterate}
@@ -110,8 +121,7 @@ export default function Page() {
           points={points}
           setPoints={(p) => {
             setPoints([...points, p]);
-            setGeneration(0);
-            initGa();
+            resetGa();
           }}
           dimensionRef={dimensions}
           bestRoute={path[0]}
@@ -123,7 +133,7 @@ export default function Page() {
 }
 
 
-export function generatePoints(count: number, [width, height]: [number, number]): City[] {
+function generatePoints(count: number, [width, height]: [number, number]): City[] {
   const points: City[] = [];
   for (let i = 0; i < count; i++) {
     points.push(new City(

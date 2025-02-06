@@ -7,6 +7,7 @@ interface ConstraintsHeaderProps {
   onChange: (updatedParameters: { [key: string]: string | number }) => void,
   onGenerate: (count: number) => void,
   onClear: () => void,
+  onResetPath: () => void,
 }
 
 export default function ConstraintsHeader(props: ConstraintsHeaderProps) {
@@ -50,6 +51,11 @@ export default function ConstraintsHeader(props: ConstraintsHeaderProps) {
         <div className="flex flex-col items-center">
           <ConstraintsButton onClick={props.onClear} className="mt-4 px-2">
             Clear
+          </ConstraintsButton>
+        </div>
+        <div className="flex flex-col items-center">
+          <ConstraintsButton onClick={props.onResetPath} className="mt-4 px-2">
+            Reset Path
           </ConstraintsButton>
         </div>
       </div>

@@ -8,6 +8,38 @@ export default function Experience() {
   return (
     <>
       <Section
+        title="Loopsio"
+        position="Part Time Software Developer"
+        duration="Dec 2024 - Present"
+        type="Remote"
+        location="Based on Glasgow, UK"
+      >
+        <SectionPoints
+          points={[
+            "Worked in a team of 3 to build a full-stack web application using ReactJS, Express, and PostgreSQL",
+            "Integrated OpenAI LLMs to power customised feedback, key points and suggestions from user data",
+            "Setup and Maintain the Hosting Server on Digital Ocean using Nginx as a reverse proxy",
+            "\tImplemented security measures with UFW and SSH-Guard to prevent unauthorized access and abuse",
+            "Implemented CI/CD pipelines using GitHub Actions to automate the build, test and deployment process",
+            "Weekly discussions and feedback between the client and internal team members to ensure the project is on track",
+          ]}
+        />
+        <ExperienceTechs
+          techs={
+            [
+              "react",
+              "expressjs",
+              "postgres",
+              "typescript",
+              "openai",
+              "github-actions",
+              "digital-ocean",
+              "nginx"
+            ]
+          }
+        />
+      </Section>
+      <Section
         title="Ixigo"
         position="Software Developer Intern | Part-Time"
         duration="Aug 2024 - Sept 2024 (2 mos) | Oct 2024 - Dec 2024 (3 mos)"
@@ -60,7 +92,8 @@ export default function Experience() {
             "tailwind",
             "typescript",
             "github-actions",
-            "digital-ocean"
+            "digital-ocean",
+            "nginx"
           ]}
         />
       </Section>

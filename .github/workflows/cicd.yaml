@@ -17,7 +17,7 @@ jobs:
             cd ~/Projects/personal-website
             eval (ssh-agent -c)
             ssh-add ~/.ssh/personal_server
-            git pull
+            git pull || exit 1
             nvm use 
             pnpm build
             sudo systemctl restart personalwebsite.service

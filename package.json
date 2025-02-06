@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build:wasm:constraints && next build",
+    "build:wasm:constraints": "cd public/wasm/constraints && wasm-pack build --target web && cd ../../..",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "wasm:update": "git submodule update --init --recursive && git submodule foreach git pull origin main"
   },
   "dependencies": {
     "constraints": "link:constraints",
