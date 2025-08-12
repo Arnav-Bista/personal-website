@@ -21,7 +21,7 @@ export default function Education() {
               ]}
             />
             <SectionDetails
-              title="2024/25"
+              title="2024/25 - Dean's List"
               entry={[
                 "CS3050 - Logic and Reasoning",
                 "CS3052 - Computational Complexity",
@@ -34,7 +34,7 @@ export default function Education() {
               ]}
             />
             <SectionDetails
-              title="2023/24"
+              title="2023/24 - Dean's List"
               entry={[
                 "CS2001 - Foundations of Computing",
                 "CS2002 - Computer Systems",
@@ -43,7 +43,7 @@ export default function Education() {
               ]}
             />
             <SectionDetails
-              title="2022/23"
+              title="2022/23 - Dean's List"
               entry={[
                 "CS1002 - Object Oriented Programming",
                 "CS1003 - Programming with Data",

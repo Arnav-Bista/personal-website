@@ -8,35 +8,55 @@ export default function Experience() {
   return (
     <>
       <Section
-        title="Loopsio"
-        position="Part Time Software Developer"
-        duration="Dec 2024 - Present"
-        type="Remote"
-        location="Based on Glasgow, UK"
+        title="Quantifi"
+        position="Developer Intern"
+        duration="Jun 2025 - Sept 2025"
+        type="Onsite"
+        location="London, UK"
       >
         <SectionPoints
           points={[
-            "Worked in a team of 3 to build a full-stack web application using ReactJS, Express, and PostgreSQL",
-            "Integrated OpenAI LLMs to power customised feedback, key points and suggestions from user data",
-            "Setup and Maintain the Hosting Server on Digital Ocean using Nginx as a reverse proxy",
-            "\tImplemented security measures with UFW and SSH-Guard to prevent unauthorized access and abuse",
-            "Implemented CI/CD pipelines using GitHub Actions to automate the build, test and deployment process",
-            "Weekly discussions and feedback between the client and internal team members to ensure the project is on track",
+            "Executed enterprise-scale .NET framework migration across 40+ critical projects, modernizing legacy systems",
+            "Engineered advanced data filtering and visualization capabilities, enhancing user experience for complex financial instruments",
+            "Completed 32 development tasks including bug fixes for risk calculation systems and implementation of client-requested features",
+            "Collaborated with cross-functional teams to optimize database performance and streamline risk calculation workflows",
+            "Diagnosed and resolved critical production issues in HPC grid environments, debugging task execution failures in distributed systems",
           ]}
         />
         <ExperienceTechs
-          techs={
-            [
-              "react",
-              "expressjs",
-              "postgres",
-              "typescript",
-              "openai",
-              "github-actions",
-              "digital-ocean",
-              "nginx"
-            ]
-          }
+          techs={[
+            "c_sharp",
+            "dotnet",
+            "mysql",
+          ]}
+        />
+      </Section>
+      <Section
+        title="Loopsio"
+        position="Software Engineer"
+        duration="Dec 2024 - Mar 2025"
+        type="Remote"
+        location="Based in Glasgow, UK"
+      >
+        <SectionPoints
+          points={[
+            "Architected full-stack web application for 3-person startup team, leveraging ExpressJS, TypeScript, React, and PostgreSQL",
+            "Implemented repository service pattern and integrated OpenAI APIs to enhance backend architecture and user functionality",
+            "Established secure cloud infrastructure on DigitalOcean using UFW and SSHGuard security protocols",
+            "Implemented CI/CD pipelines using GitHub Actions to automate the build, test and deployment process",
+          ]}
+        />
+        <ExperienceTechs
+          techs={[
+            "react",
+            "expressjs",
+            "postgres",
+            "typescript",
+            "openai",
+            "github-actions",
+            "digital-ocean",
+            "nginx"
+          ]}
         />
       </Section>
       <Section
