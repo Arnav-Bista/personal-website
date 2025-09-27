@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Fira_Code } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "@/app/globals.css";
 import "./background.css";
 import NavBar from "../components/navbar";
 
-const firaCode = Fira_Code({ subsets: ["latin"] });
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Arnav Bista",
@@ -22,7 +22,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${firaCode.className}`}>
+      <body className={`${jetbrainsMono.className}`}>
         <div className="layers">
           <div className="complement" />
           <div className="highlight" />
