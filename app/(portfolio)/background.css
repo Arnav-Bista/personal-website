@@ -5,75 +5,73 @@
   position: fixed;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .layers > div {
-  height: 100%;
-  width: 100%;
+  height: 120%;
+  width: 120%;
   position: fixed;
-  opacity: 50%;
+  top: -10%;
+  left: -10%;
+  opacity: 40%;
 }
 
 .layers .highlight {
   background: radial-gradient(circle at center,
       var(--highlight-color),
-      transparent 50%);
-  background-size: 70rem 70rem;
+      rgba(184, 51, 106, 0.3) 30%,
+      transparent 65%);
+  background-size: 55rem 55rem;
   background-repeat: no-repeat;
-  animation: move-color 20s ease infinite;
-  mix-blend-mode: color;
+  animation: gentle-drift-1 25s ease-in-out infinite;
+  mix-blend-mode: screen;
+  filter: blur(1px);
 }
 
 .layers .complement {
   background: radial-gradient(circle at center,
       var(--highlight-complement),
-      transparent 50%);
-  background-size: 60rem 60rem;
+      rgba(51, 184, 129, 0.2) 25%,
+      transparent 60%);
+  background-size: 45rem 45rem;
   background-repeat: no-repeat;
-  animation: move-color-m 17s ease infinite;
-  mix-blend-mode: saturation;
+  animation: gentle-drift-2 20s ease-in-out infinite;
+  mix-blend-mode: multiply;
+  filter: blur(0.5px);
 }
 
 .layers .third {
   background: radial-gradient(circle at center,
       var(--third-color),
-      transparent 50%);
-  background-size: 70rem 70rem;
+      rgba(46, 64, 87, 0.25) 35%,
+      transparent 70%);
+  background-size: 50rem 50rem;
   background-repeat: no-repeat;
-  animation: move-color-opp 25s ease infinite;
-  mix-blend-mode: hue;
+  animation: gentle-drift-3 30s ease-in-out infinite;
+  mix-blend-mode: overlay;
+  filter: blur(1.5px);
 }
 
-@keyframes move-color {
-  0%, 100% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
+@keyframes gentle-drift-1 {
+  0% { background-position: 20% 30%; }
+  25% { background-position: 40% 20%; }
+  50% { background-position: 70% 60%; }
+  75% { background-position: 30% 80%; }
+  100% { background-position: 20% 30%; }
 }
 
-@keyframes move-color-m {
-  0%, 100% {
-    background-position: 100% 0;
-  }
-  50% {
-    background-position: 0 100%;
-  }
+@keyframes gentle-drift-2 {
+  0% { background-position: 80% 70%; }
+  33% { background-position: 30% 40%; }
+  66% { background-position: 60% 20%; }
+  100% { background-position: 80% 70%; }
 }
 
-
-@keyframes move-color-opp {
-  0%, 100% {
-    background-position: 50% 100%;
-  }
-  25% {
-    background-position: 75% 0%;
-  }
-  50% {
-    background-position: 25% 50%;
-  }
-  75% {
-    background-position: 100% 100%;
-  }
+@keyframes gentle-drift-3 {
+  0% { background-position: 50% 20%; }
+  30% { background-position: 80% 50%; }
+  60% { background-position: 20% 70%; }
+  90% { background-position: 60% 40%; }
+  100% { background-position: 50% 20%; }
 }
