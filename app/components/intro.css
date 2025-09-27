@@ -1,0 +1,28 @@
+.vimcursor {
+  display: inline-block;
+  background-color: black;
+  color: white;
+}
+
+.insert-cursor {
+  position: relative;
+}
+
+.insert-cursor::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  bottom: 2px;
+  width: 2px;
+  background-color: black;
+}
+
+[data-theme="dark"] .insert-cursor::after {
+  background-color: white;
+}
+
+[data-theme="dark"] .vimcursor {
+  background-color: white;
+  color: black;
+}

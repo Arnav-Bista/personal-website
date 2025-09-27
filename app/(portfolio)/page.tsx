@@ -5,15 +5,13 @@ import Card from "../components/card";
 import myself from "@/public/images/myself.jpeg"
 import Link from "next/link";
 import Techs from "./techs";
+import Intro from "../components/intro";
 import "./home.css"
 
 export default function Home() {
   return (
     <>
-      <div className="intro h-[60vh] w-full align-middle justify-center items-center place-content-center text-center">
-        <h1>Hi, I'm Arnav</h1>
-        <h2>Aspiring Software Engineer</h2>
-      </div>
+      <Intro />
       <Card backdrop>
         <div className="m-10 p-8 flex felx-row gap-4">
           <div className="flex flex-col">
