@@ -2,8 +2,53 @@
   height: 2rem;
   width: 2rem;
   margin: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-button:hover {
+  background: rgba(var(--foreground-rgb), 0.1);
+  transform: scale(1.05);
+}
+
+.theme-button:active {
+  transform: scale(0.95);
 }
 
 #theme-button[data-theme="dark"] {
   filter: invert(1);
+}
+
+/* Mobile Responsive Design for Theme Button */
+@media (max-width: 768px) {
+  .theme-button {
+    height: 1.75rem;
+    width: 1.75rem;
+    padding: 0.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-button {
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 0.15rem;
+    border-radius: 0.375rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .theme-button {
+    height: 1.25rem;
+    width: 1.25rem;
+    padding: 0.1rem;
+    border-radius: 0.25rem;
+  }
 }

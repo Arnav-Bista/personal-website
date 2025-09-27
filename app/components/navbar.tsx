@@ -1,7 +1,7 @@
 "use client";
 import assert from 'assert';
 import { usePathname } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import "./navbar.css";
 import Link from 'next/link';
@@ -14,31 +14,13 @@ interface NavBarProps {
 }
 
 export default function NavBar(props: NavBarProps) {
-
   assert(
     props.titles.length === props.urls.length,
     "Titles and URLs must be the same length!"
   )
 
   const currentPage = usePathname();
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      console.log(e.target);
-      if (e.target !== document.querySelector('.hamburger-icon')) {
-        setOpen(false);
-      }
-      else {
-        setOpen(!open);
-      }
-    };
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  });
-
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const links = props.titles.map((title, index) => {
     const className = `link text-nowrap ${currentPage === props.urls[index] ? 'selected' : ''}`
@@ -46,6 +28,7 @@ export default function NavBar(props: NavBarProps) {
       key={index}
       href={props.urls[index]}
       className={className}
+      onClick={() => setIsMobileMenuOpen(false)}
     >
       {title.toUpperCase()}
     </Link>
@@ -53,26 +36,33 @@ export default function NavBar(props: NavBarProps) {
 
   return (
     <>
-      <div className='filler w-full'>
-        <div className='navbar w-[80%] mx-auto flex items-center justify-between'>
-          <h1 className='long-name w-1/3 text-nowrap'>Arnav Bista</h1>
-          <h1 className='short-name w-1/3 text-nowrap'>AB</h1>
-          <div className='navbar-links'>
-            {links}
-          </div>
-          <div className='flex flex-row w-1/6'>
-            <ThemeSelector />
-            <div className={`hamburger ${open ? "open" : ""}`}>
-              <h1 className={`hamburger-icon text-center`}>&#9776;</h1>
-              <div className={`hamburger-dropdown ${open ? '' : 'hidden'}`}>
-                {links}
-              </div>
+      <div className='navbar-container'>
+        <div className='navbar-island'>
+          <div className='navbar-content'>
+            <div className='navbar-links-container'>
+              {links}
+            </div>
+            <div className='navbar-mobile-menu'>
+              <button
+                className='dropdown-button'
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle mobile menu"
+              >
+                <span className='dropdown-text'>LINKS</span>
+                <span className={`dropdown-arrow ${isMobileMenuOpen ? 'open' : ''}`}>›</span>
+              </button>
+              {isMobileMenuOpen && (
+                <div className='mobile-dropdown'>
+                  {links}
+                </div>
+              )}
+            </div>
+            <div className='navbar-controls'>
+              <ThemeSelector />
             </div>
           </div>
-
         </div>
       </div>
-      <div className='h-8' />
     </>
   );
 }
