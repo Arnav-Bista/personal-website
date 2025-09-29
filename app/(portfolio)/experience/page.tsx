@@ -3,10 +3,11 @@ import SectionDetails from "../../components/sectionDetails";
 import SectionPoints from "../../components/sectionPoints";
 import ExperienceTechs from "./experienceTechs";
 import Section from "./section";
+import "./experience.css";
 
 export default function Experience() {
   return (
-    <>
+    <div className="experience-section">
       <Section
         title="Quantifi"
         position="Developer Intern"
@@ -16,11 +17,10 @@ export default function Experience() {
       >
         <SectionPoints
           points={[
-            "Executed enterprise-scale .NET framework migration across 40+ critical projects, modernizing legacy systems",
-            "Engineered advanced data filtering and visualization capabilities, enhancing user experience for complex financial instruments",
-            "Completed 32 development tasks including bug fixes for risk calculation systems and implementation of client-requested features",
-            "Collaborated with cross-functional teams to optimize database performance and streamline risk calculation workflows",
-            "Diagnosed and resolved critical production issues in HPC grid environments, debugging task execution failures in distributed systems",
+            "Diagnosed and resolved critical production outage affecting 4.5M task workloads; eliminated N+1 query antipattern with bulk SQL operations using CTEs, restoring system stability",
+            "Redesigned enterprise build system for 240+ project C# monorepo; implemented parallel compilation and dependency optimisation, reducing clean builds 75% (40m→10m) and enabling 1-min incremental builds, boosting developer experience",
+            "Optimized critical client trading form bottleneck; replaced full-dataset bond dropdown with selective projections, reducing load times from 60s to 9s",
+            "Fixed distributed state management bug in HPC grid where SQL timeouts left tasks in inconsistent 'Queued' state; implemented cleanup logic to reconcile task states post-job completion",
           ]}
         />
         <ExperienceTechs
@@ -61,28 +61,21 @@ export default function Experience() {
       </Section>
       <Section
         title="Ixigo"
-        position="Software Developer Intern | Part-Time"
-        duration="Aug 2024 - Sept 2024 (2 mos) | Oct 2024 - Dec 2024 (3 mos)"
-        type="Hybrid"
-        location="Gurugram, India | Remote"
+        position="Software Developer Intern"
+        duration="Jul 2024 - Sept 2024"
+        type="Onsite"
+        location="Gurugram, India"
       >
         <SectionPoints
           points={[
-            "Integrated LLMs into existing tech stacks to improve user experience by providing AI Powered features",
-            "Forked and Developed on an existing OSS in Go, Postgres and MySQL to create facts and summary generation system for LLMs",
-            "\tCreated 'Infinite Memory' for LLMs to remember data without using infinite tokens",
-            "\tDrastically reduced the required tokens and average lantency for LLM calls using the new memory system",
-            "Implement Rate Limiters for costly API calls to prevent abuse",
-            "\tUtilized a modified version of the 'Leaky Bucket' algorithm with Redis to sync across all server instances on the backend",
-            "\tAdded a rate limiter for the chat interface on the frontend to prevent accidental and intentional spamming",
-            "Developed several scripts to generate automated and scheduled reports using Prefect, integrating it with Slack channels",
+            "Architected 'Infinite Memory' system for production LLM infrastructure; extended open-source Go applications with hierarchical context pruning and intelligent summarization to optimize token usage in chat flows",
+            "Implemented distributed rate limiting for LLM API endpoints using Redis shared state across server instances to prevent cost overruns",
           ]}
         />
         <ExperienceTechs
           techs={[
             "go",
             "python",
-            "javascript",
             "react",
             "postgres",
             "mysql"
@@ -143,6 +136,6 @@ export default function Experience() {
           ]}
         />
       </Section>
-    </>
+    </div>
   );
 }

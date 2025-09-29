@@ -1,0 +1,41 @@
+.button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.button-primary {
+  background-color: var(--highlight-color);
+  color: white;
+  border-color: var(--highlight-color);
+}
+
+.button-secondary {
+  background-color: var(--third-color);
+  color: white;
+  border-color: var(--third-color);
+}
+
+.button-outline {
+  background-color: transparent;
+  color: var(--highlight-color);
+  border-color: var(--highlight-color);
+}
+
+[data-theme="dark"] .button-outline {
+  color: var(--highlight-color);
+  border-color: var(--highlight-color);
+}
+
+@media (max-width: 768px) {
+  .button {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}

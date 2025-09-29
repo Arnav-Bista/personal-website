@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import "./intro.css";
 import Card from "./card";
+import Button from "./button";
 
 const normalMode = '-- NORMAL --';
 const insertMode = '-- INSERT --';
@@ -11,7 +12,7 @@ const defaultTopText = "Hi, I'm Arnav Bista";
 const defaultBottomText = "A Software Developer";
 const bottomPrefix = "A ";
 const bottomSuffix = " Developer";
-const developerTypes = ["Web", "Mobile", "Backend", "FullStack", "DevOps", "Software"];
+const developerTypes = ["Rust", "Web", "Backend", "FullStack", "Mobile", "Software"];
 
 async function wait(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -88,35 +89,32 @@ export default function Intro() {
     }
 
     async function RetypeAndDeleteCycle() {
-      for (let i = 0; i < developerTypes.length; i++) {
-        const devType = developerTypes[i]
+      while (true) {
+        for (let i = 0; i < developerTypes.length; i++) {
+          const devType = developerTypes[i]
 
-        // Write 
-        for (let i = 0; i <= devType.length; i++) {
-          await wait(40 + Math.random() * 25);
-          setBottomText(bottomPrefix + devType.slice(0, i) + bottomSuffix);
-          setCursorPosition([1, bottomPrefix.length + i]);
+          // Write
+          for (let i = 0; i <= devType.length; i++) {
+            await wait(40 + Math.random() * 25);
+            setBottomText(bottomPrefix + devType.slice(0, i) + bottomSuffix);
+            setCursorPosition([1, bottomPrefix.length + i]);
+          }
+
+          await wait(250);
+
+          setCursorPosition([1, bottomPrefix.length + devType.length - 1]);
+          setVimMode(normalMode);
+
+          await wait(1000)
+
+          // Delete
+          await wait(250);
+          setVimMode(insertMode);
+          setBottomText(bottomPrefix + bottomSuffix);
+          setCursorPosition([1, 2]);
+
+          await wait(500);
         }
-
-        await wait(250);
-
-        setCursorPosition([1, bottomPrefix.length + devType.length - 1]);
-        setVimMode(normalMode);
-
-        await wait(1000)
-
-        if (i == developerTypes.length - 1) {
-          setCursorPosition([1, bottomPrefix.length + devType.length + bottomSuffix.length - 1]);
-          break;
-        }
-
-        // Delete
-        await wait(250);
-        setVimMode(insertMode);
-        setBottomText(bottomPrefix + bottomSuffix);
-        setCursorPosition([1, 2]);
-
-        await wait(500);
       }
     }
 
@@ -147,6 +145,17 @@ export default function Intro() {
         </div>
         <p className="">{vimMode}</p>
       </Card>
+      <div className="flex flex-row gap-3 md:gap-4 justify-center items-center mt-8 mb-10 flex-wrap px-4">
+        <Button href="/contact" variant="primary">
+          Contact Me
+        </Button>
+        <Button href="https://www.linkedin.com/in/arnav-bista/" variant="secondary" external>
+          LinkedIn
+        </Button>
+        <Button href="https://github.com/Arnav-Bista" variant="outline" external>
+          GitHub
+        </Button>
+      </div>
     </div>
   );
 }

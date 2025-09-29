@@ -6,29 +6,24 @@ import myself from "@/public/images/myself.jpeg"
 import Link from "next/link";
 import Techs from "./techs";
 import Intro from "../components/intro";
-import "./home.css"
+import Button from "../components/button";
 
 export default function Home() {
   return (
-    <>
+    <div className="pb-10">
       <Intro />
       <Card backdrop>
-        <div className="m-10 p-8 flex felx-row gap-4">
+        <div className="m-4 md:m-10 p-4 md:p-8 flex flex-col md:flex-row gap-4 md:gap-6">
           <div className="flex flex-col">
             <h1>About Me</h1>
             <p className="my-4">
-              I'm a 4th year Computer Science student at the University of St Andrews. <br />
-              I've got a passion for problem solving and am always on the lookout for new challenges. <br />
+              Final year Computer Science student at St Andrews (Dean's List, graduating June 2026).
             </p>
-            <p>
-              I have experience with a variety of programming languages and frameworks and am constantly on the lookout to improve my skills.
-              I'm a full stack developer, able to create and setup servers, web apps, mobile apps and anything in between. If I can't yet, I'm up for the challenge.
-            </p>
-            <p className="my-4">
-              I'm always on the lookout for opportunities. If you have a problem that needs solving, or a project that needs a developer, let's talk.
+            <p className="mb-4">
+              Rust enthusiast with experience in systems programming, backend development, and performance optimization. Proficient in Rust, C#, and TypeScript.
             </p>
             <div className="mt-auto">
-              <Link href="/contact" className="link">GET IN TOUCH</Link>
+              <Button href="/contact" variant="primary">Get In Touch</Button>
             </div>
           </div>
           <Image
@@ -36,11 +31,13 @@ export default function Home() {
             alt="Picture of Me"
             quality={100}
             placeholder="blur"
-            className="rounded-md aboutmeimg"
+            className="rounded-md w-[25vw] object-cover max-[930px]:hidden"
           />
         </div>
       </Card>
-      <Techs />
-    </>
+      <div className="mt-10">
+        <Techs />
+      </div>
+    </div>
   );
 }

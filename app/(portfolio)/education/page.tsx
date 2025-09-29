@@ -4,20 +4,25 @@ import Card from "../../components/card";
 import standrews from "@/public/images/standrews.png"
 import tbs from "@/public/images/tbs.png"
 import SectionDetails from "../../components/sectionDetails";
-import "./education.css";
 
 export default function Education() {
 
   return (
-    <>
+    <div>
       <Card backdrop className="mt-10">
-        <div className="m-10 p-8 flex flex-row">
-          <div className="flex flex-col">
-            <h1>Undergraduate</h1>
+        <div className="m-6 md:m-10 p-4 md:p-8 flex flex-col md:flex-row gap-4">
+          <div className="flex flex-col flex-1">
+            <h1 className="font-bold mb-6">Undergraduate</h1>
             <SectionDetails
               title="2025/26"
               entry={[
-                "Coming Soon..."
+                "CS4105 - Advanced Communication Networks and Systems",
+                "CS4102 - Computer Graphics",
+                "CS4402 - Constraint Programming",
+                "CS4202 - Computer Architecture",
+                "CS5014 - Machine Learning",
+                "CS4303 - Video Games",
+                "CS4099 - Major Software Project"
               ]}
             />
             <SectionDetails
@@ -54,21 +59,21 @@ export default function Education() {
               ]}
             />
           </div>
-          <div className="w-1/3 edu-logo">
+          <div className="w-full md:w-1/3 md:ml-auto flex justify-center md:justify-end items-start">
             <Image
               src={standrews}
               alt="Picture of Me"
               quality={100}
               placeholder="blur"
-              className="rounded-md"
+              className="rounded-md max-w-[200px] md:max-w-none"
             />
           </div>
         </div>
       </Card>
       <Card backdrop className="mt-10">
-        <div className="m-10 p-8 flex flex-row">
-          <div className="flex flex-col">
-            <h1>International Baccalaureate</h1>
+        <div className="m-6 md:m-10 p-4 md:p-8 flex flex-col md:flex-row gap-4">
+          <div className="flex flex-col flex-1">
+            <h1 className="font-bold mb-6">International Baccalaureate</h1>
             <SectionDetails
               title="42/45"
               entry={[
@@ -91,13 +96,13 @@ export default function Education() {
               ]}
             />
           </div>
-          <div className="w-1/3 edu-logo">
+          <div className="w-full md:w-1/3 md:ml-auto flex justify-center md:justify-end items-start">
             <Image
               src={tbs}
               alt="The British School, New Delhi Logo"
               quality={100}
               placeholder="blur"
-              className="rounded-md edu-logo"
+              className="rounded-md max-w-[200px] md:max-w-none max-h-[200px] md:max-h-[300px]"
               style={{
                 objectFit: "contain"
               }}
@@ -105,6 +110,6 @@ export default function Education() {
           </div>
         </div>
       </Card>
-    </>
+    </div>
   );
 }

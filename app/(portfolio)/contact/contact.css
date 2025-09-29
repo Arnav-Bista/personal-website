@@ -1,0 +1,66 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgb(var(--foreground-rgb));
+}
+
+.form-input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid rgba(var(--foreground-rgb), 0.2);
+  border-radius: 0.5rem;
+  background-color: var(--background-color);
+  color: rgb(var(--foreground-rgb));
+  transition: border-color 0.2s ease-in-out;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--highlight-color);
+}
+
+.form-input::placeholder {
+  color: rgba(var(--foreground-rgb), 0.5);
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.success-message {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(184, 51, 106, 0.1);
+  color: var(--highlight-color);
+  border: 2px solid var(--highlight-color);
+  text-align: center;
+  font-weight: 500;
+}
+
+.error-message {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  border: 2px solid #dc2626;
+  text-align: center;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .form-input {
+  border-color: rgba(var(--foreground-rgb), 0.3);
+}
+
+[data-theme="dark"] .error-message {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-color: #ef4444;
+}
