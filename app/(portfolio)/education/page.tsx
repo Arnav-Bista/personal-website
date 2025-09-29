@@ -12,7 +12,7 @@ export default function Education() {
       <Card backdrop className="mt-10">
         <div className="m-6 md:m-10 p-4 md:p-8 flex flex-col md:flex-row gap-4">
           <div className="flex flex-col flex-1">
-            <h1 className="font-bold mb-6">Undergraduate</h1>
+            <h1 className="font-bold mb-6">BSc (Hons) Computer Science</h1>
             <SectionDetails
               title="2025/26"
               entry={[
@@ -22,7 +22,7 @@ export default function Education() {
                 "CS4202 - Computer Architecture",
                 "CS5014 - Machine Learning",
                 "CS4303 - Video Games",
-                "CS4099 - Major Software Project"
+                "CS4099 (Dissertation) - Optimising Tree-Morph, a Rule Based Tree Rewriter"
               ]}
             />
             <SectionDetails
