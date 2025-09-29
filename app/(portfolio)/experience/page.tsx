@@ -49,10 +49,8 @@ export default function Experience() {
         <ExperienceTechs
           techs={[
             "react",
-            "expressjs",
             "postgres",
             "typescript",
-            "openai",
             "github-actions",
             "digital-ocean",
             "nginx"
@@ -132,7 +130,6 @@ export default function Experience() {
           techs={[
             "dart",
             "flutter",
-            "firebase"
           ]}
         />
       </Section>
