@@ -19,5 +19,6 @@ jobs:
             ssh-add ~/.ssh/personal_server
             git pull || exit 1
             nvm use 
+            pnpm i
             pnpm build
             sudo systemctl restart personalwebsite.service
