@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { memo, MutableRefObject, useEffect, useRef, useState } from "react";
 import InteractiveGrid, { InteractiveGridProps } from "./interactiveGrid";
 
 interface RIGProps extends Omit<InteractiveGridProps, "gridSize"> {
@@ -12,7 +12,7 @@ interface RIGProps extends Omit<InteractiveGridProps, "gridSize"> {
  * Basically the Interactive Grid but it'll take the available width and height
  * Does this by useEffect with getBoundingClientRect and a ResizeObserver
  */
-export default function ReactiveInteractiveGrid(props: RIGProps) {
+function ReactiveInteractiveGrid(props: RIGProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState<[number, number]>([0, 0]);
 
@@ -50,5 +50,7 @@ export default function ReactiveInteractiveGrid(props: RIGProps) {
     </div>
   );
 }
+
+export default memo(ReactiveInteractiveGrid);
 
 

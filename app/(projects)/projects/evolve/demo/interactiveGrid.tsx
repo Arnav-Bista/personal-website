@@ -1,4 +1,5 @@
-import { City } from "@/public/wasm/constraints/pkg/genetic_algorithm";
+import { memo } from "react";
+import { City } from "@/public/wasm/evolve/pkg/genetic_algorithm";
 
 export interface InteractiveGridProps {
   gridSize: [number, number],
@@ -14,7 +15,7 @@ export interface IGPoint {
   y: number
 }
 
-export default function InteractiveGrid(props: InteractiveGridProps) {
+function InteractiveGrid(props: InteractiveGridProps) {
 
   const gridStep = {
     x: props.gridSize[0] / props.gridLines[0],
@@ -24,7 +25,7 @@ export default function InteractiveGrid(props: InteractiveGridProps) {
   const stroke = "#ddd";
   const strokeWidth = 1;
 
-  const verticalLines = Array.from({ length: props.gridSize[0] }, (_, i) => (
+  const verticalLines = Array.from({ length: props.gridLines[0] }, (_, i) => (
     <line
       key={`verticalLine-${i}`}
       y1={0}
@@ -36,7 +37,7 @@ export default function InteractiveGrid(props: InteractiveGridProps) {
     />
   ));
 
-  const horizontalLines = Array.from({ length: props.gridSize[0] }, (_, i) => (
+  const horizontalLines = Array.from({ length: props.gridLines[1] }, (_, i) => (
     <line
       key={`horizontalLine-${i}`}
       x1={0}
@@ -96,3 +97,5 @@ export default function InteractiveGrid(props: InteractiveGridProps) {
     </svg>
   );
 }
+
+export default memo(InteractiveGrid);

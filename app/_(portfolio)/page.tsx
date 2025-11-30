@@ -20,7 +20,7 @@ export default function Home() {
               Final year Computer Science student at St Andrews (Dean's List, graduating June 2026).
             </p>
             <p className="mb-4">
-              Rust enthusiast with experience in systems programming, backend development, and performance optimization. Proficient in Rust, C#, and TypeScript.
+              Comfortable in Rust, TypeScript and Python. Daily driving Linux ;) 
             </p>
             <div className="mt-auto">
               <Button href="/contact" variant="primary">Get In Touch</Button>

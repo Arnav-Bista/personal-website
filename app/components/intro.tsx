@@ -8,11 +8,11 @@ import Button from "./button";
 const normalMode = '-- NORMAL --';
 const insertMode = '-- INSERT --';
 
-const defaultTopText = "Hi, I'm Arnav Bista";
+const defaultTopText = "Hi, I'm Arnav";
 const defaultBottomText = "A Software Developer";
 const bottomPrefix = "A ";
 const bottomSuffix = " Developer";
-const developerTypes = ["Rust", "Web", "Backend", "FullStack", "Mobile", "Software"];
+// const developerTypes = ["Rust", "Backend", "FullStack", "Software"];
 
 async function wait(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -88,38 +88,38 @@ export default function Intro() {
       setBottomText(bottomPrefix + bottomSuffix);
     }
 
-    async function RetypeAndDeleteCycle() {
-      while (true) {
-        for (let i = 0; i < developerTypes.length; i++) {
-          const devType = developerTypes[i]
+    // async function RetypeAndDeleteCycle() {
+    //   while (true) {
+    //     for (let i = 0; i < developerTypes.length; i++) {
+    //       const devType = developerTypes[i]
+    //
+    //       // Write
+    //       for (let i = 0; i <= devType.length; i++) {
+    //         await wait(40 + Math.random() * 25);
+    //         setBottomText(bottomPrefix + devType.slice(0, i) + bottomSuffix);
+    //         setCursorPosition([1, bottomPrefix.length + i]);
+    //       }
+    //
+    //       await wait(250);
+    //
+    //       setCursorPosition([1, bottomPrefix.length + devType.length - 1]);
+    //       setVimMode(normalMode);
+    //
+    //       await wait(1000)
+    //
+    //       // Delete
+    //       await wait(250);
+    //       setVimMode(insertMode);
+    //       setBottomText(bottomPrefix + bottomSuffix);
+    //       setCursorPosition([1, 2]);
+    //
+    //       await wait(500);
+    //     }
+    //   }
+    // }
 
-          // Write
-          for (let i = 0; i <= devType.length; i++) {
-            await wait(40 + Math.random() * 25);
-            setBottomText(bottomPrefix + devType.slice(0, i) + bottomSuffix);
-            setCursorPosition([1, bottomPrefix.length + i]);
-          }
 
-          await wait(250);
-
-          setCursorPosition([1, bottomPrefix.length + devType.length - 1]);
-          setVimMode(normalMode);
-
-          await wait(1000)
-
-          // Delete
-          await wait(250);
-          setVimMode(insertMode);
-          setBottomText(bottomPrefix + bottomSuffix);
-          setCursorPosition([1, 2]);
-
-          await wait(500);
-        }
-      }
-    }
-
-
-    startTyping().then(goBackAndDelete).then(RetypeAndDeleteCycle);
+    startTyping();
 
     return () => {
       timeouts.forEach(timeout => clearTimeout(timeout));

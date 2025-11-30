@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "@/app/globals.css";
-import "./background.css";
-import NavBar from "../components/navbar";
 
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
@@ -17,18 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const titles = ["Home", "Experience", "Education", "Projects", "Contact Me"];
-  const urls = ["/", "/experience", "/education", "/projects", "/contact"];
-
   return (
     <html lang="en">
       <body className={`${jetbrainsMono.className}`}>
-        <div className="layers">
-          <div className="complement" />
-          <div className="highlight" />
-          <div className="third" />
-        </div>
-        <NavBar titles={titles} urls={urls} />
         {children}
       </body>
     </html>

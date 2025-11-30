@@ -7,7 +7,7 @@ export default function Page() {
     <>
       <div className="flex justify-center w-full mt-8">
         <ProjectTile
-          title="Constraints"
+          title="Evolve"
           description="My own implementation of Genetic Algorithms to approximate the solutions to the TSP"
           languages={[
             "rust",

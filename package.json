@@ -4,16 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build:wasm:constraints && next build",
-    "build:wasm:constraints": "cd public/wasm/constraints && wasm-pack build --target web && cd ../../..",
+    "build": "npm run build:wasm:evolve && next build",
+    "build:wasm:evolve": "cd public/wasm/evolve && wasm-pack build --target web && cd ../../..",
     "start": "next start",
     "lint": "next lint",
     "wasm:update": "git submodule update --init --recursive && git submodule foreach git pull origin main"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "constraints": "link:constraints",
-    "genetic_algorithm": "link:constraints/pkg",
+    "evolve": "link:evolve",
+    "genetic_algorithm": "link:evolve/pkg",
     "lucide-react": "^0.469.0",
     "mini-css-extract-plugin": "^2.9.0",
     "next": "14.2.7",

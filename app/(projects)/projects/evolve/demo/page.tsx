@@ -1,11 +1,11 @@
 "use client";
 
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import ReactiveInteractiveGrid from "./reactiveInteractiveGrid";
 import ConstraintsHeader from "./constraintsHeader";
 import SimulationControls from "./simulationControls";
-import init, { City, GaWasm } from "@/public/wasm/constraints/pkg/genetic_algorithm";
+import init, { City, GaWasm } from "@/public/wasm/evolve/pkg/genetic_algorithm";
 import { IGPoint } from "./interactiveGrid";
 
 export default function Page() {
@@ -26,12 +26,21 @@ export default function Page() {
 
   useEffect(() => {
     let animationFrameId: number;
+    let lastTime = 0;
+    const targetFPS = 60;
+    const frameDelay = 1000 / targetFPS;
+
     if (isRunning) {
-      const animate = () => {
-        iterate();
+      const animate = (currentTime: number) => {
         animationFrameId = requestAnimationFrame(animate);
+
+        const elapsed = currentTime - lastTime;
+        if (elapsed > frameDelay) {
+          lastTime = currentTime - (elapsed % frameDelay);
+          iterate();
+        }
       };
-      animate();
+      animationFrameId = requestAnimationFrame(animate);
     }
     return () => {
       if (animationFrameId) {
@@ -45,7 +54,7 @@ export default function Page() {
     init().then(() => {
       console.log(("LOADED WASM SUCCESSFULLY"))
     }).catch(() => {
-      console.log("FAILED TO LOAD WASM - OH NOOOOOOOOOOOOO");
+      console.error("FAILED TO LOAD WASM - OH NOOOOOOOOOOOOO");
     }
     );
   }, []);
@@ -68,13 +77,18 @@ export default function Page() {
     ]);
   }
 
-  function resetGa() {
+  const resetGa = useCallback(() => {
     if (gaRef.current) {
       gaRef.current.free();
       gaRef.current = undefined;
     }
     setGeneration(0);
-  }
+  }, []);
+
+  const handleSetPoints = useCallback((p: IGPoint) => {
+    setPoints(prev => [...prev, p]);
+    resetGa();
+  }, [resetGa]);
 
 
   return (
@@ -119,10 +133,7 @@ export default function Page() {
           square
           gridLines={[40, 0]}
           points={points}
-          setPoints={(p) => {
-            setPoints([...points, p]);
-            resetGa();
-          }}
+          setPoints={handleSetPoints}
           dimensionRef={dimensions}
           bestRoute={path[0]}
           currentRoute={path[1]}
