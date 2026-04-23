@@ -1,6 +1,6 @@
 [submodule "public/wasm/constraints"]
 	path = public/wasm/constraints
 	url = https://github.com/Arnav-Bista/constraints
-[submodule "public/was/evolve"]
-	path = public/was/evolve
+[submodule "public/wasm/evolve"]
+	path = public/wasm/evolve
 	url = https://github.com/Arnav-Bista/evolve

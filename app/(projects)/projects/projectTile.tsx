@@ -1,4 +1,4 @@
-import ExperienceTechs from "@/app/(portfolio)/experience/experienceTechs";
+import ExperienceTechs from "@/app/_(portfolio)/experience/experienceTechs";
 import Card from "@/app/components/card";
 import Link from "next/link";
 
